@@ -13,13 +13,11 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: Hydra.tex
-          working_directory: paper
       
       - name: Compile Fourier
         uses: xu-cheng/latex-action@v2
         with:
           root_file: Taming.tex
-          working_directory: paper
           
       - name: Upload document
         uses: actions/upload-artifact@v3
