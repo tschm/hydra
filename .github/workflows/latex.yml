@@ -9,7 +9,7 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v3
           
-      - name: Compile Hydra
+      - name: Compile Original
         uses: xu-cheng/latex-action@v2
         with:
           root_file: Hydra.tex
@@ -19,13 +19,13 @@ jobs:
         with:
           root_file: Taming.tex
           
-      - name: Upload document
+      - name: Upload Original
         uses: actions/upload-artifact@v3
         with:
           name: Paper
           path: Hydra.pdf
 
-      - name: Upload document
+      - name: Upload Fourier
         uses: actions/upload-artifact@v3
         with:
           name: Paper
