@@ -1,1 +1,34 @@
+name: Build LaTeX document
+on: [push]
 
+jobs:    
+  build_paper:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v3
+          
+      - name: Compile Hydra
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: hydra.tex
+          working_directory: paper
+      
+      - name: Compile Fourier
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: taming.tex
+          working_directory: paper
+          
+      - name: Upload document
+        uses: actions/upload-artifact@v3
+        with:
+          name: Paper
+          path: hydra.pdf
+
+      - name: Upload document
+        uses: actions/upload-artifact@v3
+        with:
+          name: Paper
+          path: taming.pdf
