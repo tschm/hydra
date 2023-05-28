@@ -1,5 +1,7 @@
 name: Build LaTeX document
-on: [push]
+
+on: 
+  [push]
 
 jobs:    
   build_paper:
@@ -8,25 +10,47 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v3
-          
-      - name: Compile Original
-        uses: xu-cheng/latex-action@v2
-        with:
-          root_file: Hydra.tex
       
-      - name: Compile Fourier
-        uses: xu-cheng/latex-action@v2
+      - uses: actions/cache@v3
+        name: Tectonic Cache
         with:
-          root_file: Fourier.tex
+          path: ~/.cache/Tectonic
+          key: ${{ runner.os }}-tectonic-${{ hashFiles('**/*.tex') }}
+          restore-keys: |
+            ${{ runner.os }}-tectonic-
+      
+      - uses: wtfjoke/setup-tectonic@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Run Tectonic
+        run: |
+          tectonic Fourier.tex
+          tectonic Hydra.tex
           
-      - name: Upload Original
+      - name: Upload pdf
         uses: actions/upload-artifact@v3
         with:
-          name: Paper
-          path: Hydra.pdf
-
-      - name: Upload Fourier
-        uses: actions/upload-artifact@v3
-        with:
-          name: Paper
+          name: Fourier
           path: Fourier.pdf
+          
+      - name: Upload pdf
+        uses: actions/upload-artifact@v3
+        with:
+          name: Hydra
+          path: Hydra.pdf
+          
+      
+      
+      - name: Move document
+        run: |
+          mkdir publish
+          mv Hydra.pdf publish/Hydra.pdf
+          mv Fourier.pdf publish/Fourier.pdf
+          
+      # Push the paper folder to the github pages
+      - name: GitHub Pages action
+        uses: JamesIves/github-pages-deploy-action@v4.2.2
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: publish  # The folder the action should deploy.
