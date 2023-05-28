@@ -8,5 +8,5 @@ the compilation with LaTeX.
 
 ## Compiled papers
 
-[Taming a Hydra of Singularities](https://tschm.github.io/hydra/Hydra.pdf)
-[Taming a Hydra of Singularities in Fourier Space](https://tschm/github.io/hydra/Fourier.pdf)
+* [Taming a Hydra of Singularities](https://tschm.github.io/hydra/Hydra.pdf)
+* [Taming a Hydra of Singularities in Fourier Space](https://tschm/github.io/hydra/Fourier.pdf)
