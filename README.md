@@ -6,3 +6,7 @@ in the American Mathematical Monthly in October 2007.
 This repository serves as a playground to learn more about the workflows that automate
 the compilation with LaTeX.
 
+## Compiled papers
+
+[Taming a Hydra of Singularities](https://tschm.github.io/hydra/Hydra.pdf)
+[Taming a Hydra of Singularities in Fourier Space](https://tschm/github.io/hydra/Fourier.pdf)
