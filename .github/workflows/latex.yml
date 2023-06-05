@@ -11,46 +11,12 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v3
       
-      - uses: actions/cache@v3
-        name: Tectonic Cache
+      - uses: cvxgrp/.github/actions/latex@main
         with:
-          path: ~/.cache/Tectonic
-          key: ${{ runner.os }}-tectonic-${{ hashFiles('**/*.tex') }}
-          restore-keys: |
-            ${{ runner.os }}-tectonic-
+          paper: Fourier.tex
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
-      - uses: wtfjoke/setup-tectonic@v2
+      - uses: cvxgrp/.github/actions/latex@main
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-      
-      - name: Run Tectonic
-        run: |
-          tectonic Fourier.tex
-          tectonic Hydra.tex
-          
-      - name: Upload pdf
-        uses: actions/upload-artifact@v3
-        with:
-          name: Fourier
-          path: Fourier.pdf
-          
-      - name: Upload pdf
-        uses: actions/upload-artifact@v3
-        with:
-          name: Hydra
-          path: Hydra.pdf
-          
-      
-      
-      - name: Move document
-        run: |
-          mkdir publish
-          mv Hydra.pdf publish/Hydra.pdf
-          mv Fourier.pdf publish/Fourier.pdf
-          
-      # Push the paper folder to the github pages
-      - name: GitHub Pages action
-        uses: JamesIves/github-pages-deploy-action@v4.2.2
-        with:
-          branch: gh-pages # The branch the action should deploy to.
-          folder: publish  # The folder the action should deploy.
+          paper: Hyrda.tex
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
