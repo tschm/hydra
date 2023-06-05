@@ -18,5 +18,5 @@ jobs:
       
       - uses: cvxgrp/.github/actions/latex@main
         with:
-          paper: Hyrda.tex
+          paper: Hydra.tex
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
