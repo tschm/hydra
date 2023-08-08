@@ -12,3 +12,12 @@ compile: ## Compile both documents
 	@tectonic Hydra.tex
 	@tectonic Fourier.tex
 
+
+.PHONY: clean
+clean: ## clean the folder
+	@git clean -X -f
+
+
+.PHONY: install
+install: ## install tectonic
+	@curl --proto '=https' --tlsv1.2 -fsSL https://drop-sh.fullyjustified.net |sh
