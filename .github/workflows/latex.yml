@@ -13,10 +13,10 @@ jobs:
       
       - uses: cvxgrp/.github/actions/latex@main
         with:
-          paper: Fourier.tex
+          paper: '*.tex'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
-      - uses: cvxgrp/.github/actions/latex@main
-        with:
-          paper: Hydra.tex
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #- uses: cvxgrp/.github/actions/latex@main
+      #  with:
+      #    paper: Hydra.tex
+      #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
