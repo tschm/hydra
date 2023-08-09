@@ -1,8 +1,10 @@
 ### LaTeX ###
 
 tectonic
-Fourier.pdf
-Hydra.pdf
+
+*.pdf
+
+!img/*.pdf
 
 .idea
 
