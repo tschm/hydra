@@ -15,7 +15,7 @@ compile: ## Compile both documents
 
 .PHONY: clean
 clean: ## clean the folder
-	@git clean -X -f
+	@git clean -d -X -f
 
 
 .PHONY: install
