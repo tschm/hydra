@@ -1,7 +1,7 @@
 name: Build LaTeX document
 
 on: 
-  [push]
+  push
 
 jobs:    
   build_paper:
