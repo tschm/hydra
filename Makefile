@@ -21,3 +21,8 @@ clean: ## clean the folder
 .PHONY: install
 install: ## install tectonic
 	@curl --proto '=https' --tlsv1.2 -fsSL https://drop-sh.fullyjustified.net |sh
+
+.PHONY: fmt
+fmt:
+	@pre-commit run --all-files
+
