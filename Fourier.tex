@@ -90,7 +90,7 @@
 \renewcommand{\Im}{{\operator@font Im\,}}
 \makeatother
 
-\def\abs#1{\left|#1\right|} 
+\def\abs#1{\left|#1\right|}
 %--------------------------------------------------------
 \begin{document}
 \title[A Hydra in Fourier Space]{Taming a Hydra of Singularities in Fourier Space}
@@ -127,15 +127,15 @@
 \section{Introduction}
 In \cite{BornemannSchmelzer} Bornemann and Schmelzer invited the reader to contemplate
 a remarkable limit problem which involves an oscillatory integral of extreme nature.
-Consider a function $f: \R \to \R$ that is integrable\footnote{A function $f: \R \to \R$ is integrable if $\int_{-\infty}^\infty f(x) dx$ exists. Bornemann and Schmelzer solved the problem for a larger class of functions. In their analysis is was sufficient for $f$ to be bounded and continuous. }. 
+Consider a function $f: \R \to \R$ that is integrable\footnote{A function $f: \R \to \R$ is integrable if $\int_{-\infty}^\infty f(x) dx$ exists. Bornemann and Schmelzer solved the problem for a larger class of functions. In their analysis is was sufficient for $f$ to be bounded and continuous. }.
 Does the sequence of violently oscillatory integrals
 \begin{equation}\label{eq1}
 I_n[f] = \frac{1}{\pi}\int_0^\pi f(\tan^{[n]}x)\,dx, \qquad n=1,2,3,\ldots,
 \end{equation}
 have a limit as $n$ approaches infinity? If so, what is the limit?
-Here $\tan^{[n]}x = \tan \circ \tan \circ \cdots \circ \tan x$ denotes the n-fold iteration of the $\tan$ function. 
+Here $\tan^{[n]}x = \tan \circ \tan \circ \cdots \circ \tan x$ denotes the n-fold iteration of the $\tan$ function.
 
-It is the dramatic behavior of $\tan^{[n]}x$ that inspired Bornemann to call this function the Hydra of singularities. The aggressive nature of this function is revealed already for small $n$. As $x$ moves from $0$ to $\pi$, the values of $\tan x$ go all the way from $0$ to $+\infty$ and then from $-\infty$ to $0$ after passing the singularity at $\pi/2$. The singularity at $\pi/2$ breeds infinitely many new singularities located at $x_k$ where $\tan x_k = (k+1/2) \pi$ with $k \in \Z$. Note that the values $x_k$ accumulate at $\pi/2$. 
+It is the dramatic behavior of $\tan^{[n]}x$ that inspired Bornemann to call this function the Hydra of singularities. The aggressive nature of this function is revealed already for small $n$. As $x$ moves from $0$ to $\pi$, the values of $\tan x$ go all the way from $0$ to $+\infty$ and then from $-\infty$ to $0$ after passing the singularity at $\pi/2$. The singularity at $\pi/2$ breeds infinitely many new singularities located at $x_k$ where $\tan x_k = (k+1/2) \pi$ with $k \in \Z$. Note that the values $x_k$ accumulate at $\pi/2$.
 
 This process repeats for each further iteration of $\tan$. Each singularity breeds countably many new singularities which accumulate in their respective ancestor. In Figure~1 we have tried to illustrate this rather wild behavior of the $\tan^{[n]}x$ iteration.
 
@@ -146,7 +146,7 @@ This process repeats for each further iteration of $\tan$. Each singularity bree
 \caption{Graph of  $\tan^{[2]}(x)$ (left) and $\tan^{[3]}(x)$ (right).}
 \end{figure}
 
-This paper is a brief companion for the original paper by Bornemann and Schmelzer. The approach taken here could probably be extended for a larger class of functions. This would require a careful analysis shading light away from the central ideas. 
+This paper is a brief companion for the original paper by Bornemann and Schmelzer. The approach taken here could probably be extended for a larger class of functions. This would require a careful analysis shading light away from the central ideas.
 However, Bornemann and Schmelzer \cite{BornemannSchmelzer} gave already an elementary proof for a large class of functions and therefore our focus is on a short and elegant analysis using tools from Fourier analysis.
 
 \section{Into Fourier space and back again}
@@ -155,7 +155,7 @@ If both $f$ and its Fourier transform
 \[
 \hat{f}(\xi) := \int_{-\infty}^{\infty} f(x)\ e^{- 2\pi i x \xi}\,dx,\qquad \xi \in \R
 \]
-are integrable then for almost every $x$ (and for all $x$ if $f$ is continuous) 
+are integrable then for almost every $x$ (and for all $x$ if $f$ is continuous)
 $f$ can be represented as the inverse transform of $\hat f$
 \[
 f(x) = \int_{-\infty}^\infty \hat f(\xi) e^{2 i \pi x \xi} \, d\xi.
@@ -174,7 +174,7 @@ Since $\hat f$ is integrable the integral
 \]
 exists. We can therefore apply Fubini's theorem and get
 \begin{equation}\label{eq3}
-I_n[f] = \int_{-\infty}^\infty \hat f(\xi) \frac{1}{\pi} \int_0^\pi  e^{2 i \pi \xi \tan^{[n]}x} \,dx \,d\xi. 
+I_n[f] = \int_{-\infty}^\infty \hat f(\xi) \frac{1}{\pi} \int_0^\pi  e^{2 i \pi \xi \tan^{[n]}x} \,dx \,d\xi.
 \end{equation}
 \section{The inner Fourier integral}
 Still the problem does not look any simpler. The Hydra is lurking now in the inner integral
@@ -187,7 +187,7 @@ Therefore for $\xi \geq 0$ the integrand is bounded in the upper halfplane. We g
 \lim_{\epsilon\downarrow 0} \frac{1}{\pi} \int_0^\pi  e^{2 i \pi \xi \tan^{[n]}(x+\epsilon\,i)} \,dx =  \frac{1}{\pi} \int_0^\pi  e^{2 i \pi \xi \tan^{[n]}x} \,dx \qquad \xi \geq 0.
 \]
 The function  $e^{2 i \pi \xi \tan^{[n]}z}$ is analytic in the upper halfplane and therefore we can apply Cauchy's theorem.
-As a contour we choose the rectangle with corners $(0,\epsilon\,i),(\pi,\epsilon\,i),(\pi,a\,i),(0,a\,i)$. 
+As a contour we choose the rectangle with corners $(0,\epsilon\,i),(\pi,\epsilon\,i),(\pi,a\,i),(0,a\,i)$.
 The contributions from both vertical vertexes vanish as $\tan$ is periodic. And therefore
 \[
 \lim_{\epsilon\downarrow 0}  \frac{1}{\pi} \int_0^\pi  e^{2 i \pi \xi \tan^{[n]}(x+\epsilon\,i)} \,dx = \frac{1}{\pi} \int_0^\pi  e^{2 i \pi \xi \tan^{[n]}(x+a\,i)} \,dx \qquad \xi \geq 0, a > 0.
@@ -207,14 +207,14 @@ For $\xi \leq 0$ the same argument applied in the lower halfplane yields
 For $n \to \infty$ both integrals converge to $1$ and hence
 \[
 \lim_{n \uparrow \infty} I_n[f] = \int_{-\infty}^\infty \hat f(\xi)\,d\xi = f(0).
-\]  
+\]
 In the last step we have applied Parseval's theorem.
 
 \section{From Fourier to Hardy}
 Comparing Equation (\ref{Fourier1}) and Equation (\ref{eq1}) reveals that the inner Fourier integral is just a special case of (\ref{eq1}) with $f(x) = e^{2 i \pi \xi x}$.
 It may seem that we have made use of special properties of this particular function $f(x)$, but in fact the results generalises for a larger class of functions $f$.
-To transfer our arguments from above we need to assume that $f(z)$ is analytic and bounded in the upper halfplane. 
-However, the space of bounded analytic functions in the upper halfplane is the Hardy space $H^{\infty}$. 
+To transfer our arguments from above we need to assume that $f(z)$ is analytic and bounded in the upper halfplane.
+However, the space of bounded analytic functions in the upper halfplane is the Hardy space $H^{\infty}$.
 So, let $F \in H^\infty$, then $\|F\|_{H^\infty} = \sup_{\Im z > 0}|F(z)| < \infty$. The function $f$ may be interpreted as the non-tangential limit of $F$, that is $f(x) = F(x+iy)$ for $y \downarrow 0$. This implies $f$ is bounded, too.
 
 
