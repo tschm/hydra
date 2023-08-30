@@ -9,6 +9,7 @@ help:  ## Display this help screen
 
 .PHONY: compile
 compile: ## Compile both documents
+	@mkdir -p publish
 	@./tectonic Hydra.tex --outdir publish
 	@./tectonic Fourier.tex --outdir publish
 
