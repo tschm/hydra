@@ -8,7 +8,7 @@ help:  ## Display this help screen
 
 
 .PHONY: compile
-compile: install ## Compile both documents
+compile: ## Compile both documents
 	@tectonic Hydra.tex
 	@tectonic Fourier.tex
 
