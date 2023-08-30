@@ -1,0 +1,16 @@
+name: Build LaTeX document with make
+
+on:
+  push
+
+jobs:
+  build_paper:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v3
+
+      - name: Compile LaTeX document
+        shell: bash
+        run: make compile
