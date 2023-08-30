@@ -20,5 +20,7 @@ jobs:
       - name: GitHub Pages action
         uses: JamesIves/github-pages-deploy-action@v4.4.3
         with:
-          branch: draft_make         # The branch the action should deploy to.
-          folder: publish            # The folder the action should deploy.
+          # The branch the action should deploy to.
+          branch: draft_make
+          # The folder the action should deploy.
+          folder: publish
