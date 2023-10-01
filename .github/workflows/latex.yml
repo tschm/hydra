@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Set up Git repository
-        uses: actions/checkout@v3
+      #- name: Set up Git repository
+      #  uses: actions/checkout@v3
 
       - uses: cvxgrp/.github/actions/latex@main
         with:

@@ -133,7 +133,7 @@ This paper is a brief companion for the original paper by Bornemann and Schmelze
 However, Bornemann and Schmelzer \cite{BornemannSchmelzer} gave already an elementary proof for a large class of functions and therefore our focus is on a short and elegant analysis
 using tools from France, in particular Fourier analysis and Cauchy integrals.
 
-\section{Into Fourier space and back again}
+\section{Into Fourier space}
 The Fourier transform of $f$ exists but does not have to be integrable. This is an additional requirement for the analysis given here.
 If both $f$ and its Fourier transform
 \[
@@ -148,7 +148,7 @@ And therefore
 \[
 f(\tan^{[n]}x) = \int_{-\infty}^\infty \hat f(\xi) e^{2 i \pi \xi \tan^{[n]}x} \, d\xi.
 \]
-We insert the this term into (\ref{eq1}) and restate the problem as
+We insert this term into (\ref{eq1}) and restate the problem as
 \[
 I_n[f] = \frac{1}{\pi}\int_0^\pi \int_{-\infty}^\infty \hat f(\xi) e^{2 i \pi \xi \tan^{[n]}x} \, d\xi \,dx.
 \]
@@ -160,25 +160,30 @@ exists. We can therefore apply Fubini's theorem and get
 \begin{equation}\label{eq3}
 I_n[f] = \int_{-\infty}^\infty \hat f(\xi) \frac{1}{\pi} \int_0^\pi  e^{2 i \pi \xi \tan^{[n]}x} \,dx \,d\xi.
 \end{equation}
+
 \section{The inner Fourier integral}
+
 Still the problem does not look any simpler. The Hydra is lurking now in the inner integral
 \begin{equation}\label{Fourier1}
 \frac{1}{\pi} \int_0^\pi  e^{2 i \pi \xi \tan^{[n]}x} \,dx \qquad \xi \in \R.
 \end{equation}
 The $\tan$ function maps the upper halfplane into itself.
-Therefore for $\xi \geq 0$ the integrand is bounded in the upper halfplane. We get using dominated convergence
+Therefore, for $\xi \geq 0$ the integrand is bounded in the upper halfplane.
+We get using dominated convergence
 \[
 \lim_{\epsilon\downarrow 0} \frac{1}{\pi} \int_0^\pi  e^{2 i \pi \xi \tan^{[n]}(x+\epsilon\,i)} \,dx =  \frac{1}{\pi} \int_0^\pi  e^{2 i \pi \xi \tan^{[n]}x} \,dx \qquad \xi \geq 0.
 \]
-The function  $e^{2 i \pi \xi \tan^{[n]}z}$ is analytic in the upper halfplane and therefore we can apply Cauchy's theorem.
+The function  $e^{2 i \pi \xi \tan^{[n]}z}$ is analytic in the upper halfplane.
+We can therefore apply Cauchy's theorem.
 As a contour we choose the rectangle with corners $(0,\epsilon\,i),(\pi,\epsilon\,i),(\pi,a\,i),(0,a\,i)$.
 The contributions from both vertical vertexes vanish as $\tan$ is periodic. And therefore
 \[
 \lim_{\epsilon\downarrow 0}  \frac{1}{\pi} \int_0^\pi  e^{2 i \pi \xi \tan^{[n]}(x+\epsilon\,i)} \,dx = \frac{1}{\pi} \int_0^\pi  e^{2 i \pi \xi \tan^{[n]}(x+a\,i)} \,dx \qquad \xi \geq 0, a > 0.
 \]
-Hence we can integrate on any parallel line above the real line. In the extreme case we can move $a$ towards infinity and as
+Hence we can integrate on any parallel line above the real line.
+In the extreme case we can move $a$ towards infinity and as
 \[
-\lim_{a \uparrow \infty} \tan^{[n]}(x+a\,i)= i \tanh^{[n-1]}1
+\lim_{a \uparrow \infty} \tan^{[n]}(x+a\,i)= i \lim_{a \uparrow \infty} \tanh^{[n]} (a - i\,x)= i \tanh^{[n-1]}1
 \]
 we get
 \[
@@ -195,6 +200,7 @@ For $n \to \infty$ both integrals converge to $1$ and hence
 In the last step we have applied Parseval's theorem.
 
 \section{From Fourier to Hardy}
+
 Comparing Equation (\ref{Fourier1}) and Equation (\ref{eq1}) reveals that the inner Fourier integral is just a special case of (\ref{eq1}) with $f(x) = e^{2 i \pi \xi x}$.
 It may seem that we have made use of special properties of this particular function $f(x)$, but in fact the results generalises for a larger class of functions $f$.
 To transfer our arguments from above we need to assume that $f(z)$ is analytic and bounded in the upper halfplane.
@@ -211,7 +217,7 @@ in the upper complex half plane $\Im z >0$, such that the harmonic function $\Re
 \end{equation}
 as the real number $y$ approaches zero from above. The holomorphic function $F$ is \emph{unique}
 up to a purely imaginary additive constant. For the sake of simplicity of our presentation, we will further
-{\em assume that $F$ itself, not just $\Re F$, is bounded}\/; this additional assumption will be dropped
+{\em assume that $F$ itself, not just $\Re F$, is bounded}\/; this additional assumption is dropped
 in the elementary, real analysis proof given in \cite{BornemannSchmelzer}.
 
 Therefore
