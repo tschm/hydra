@@ -21,7 +21,7 @@ jobs:
           make compile
 
       - name: GitHub Pages action
-        uses: JamesIves/github-pages-deploy-action@v4.4.3
+        uses: JamesIves/github-pages-deploy-action@v4.5.0
         with:
           # The branch the action should deploy to.
           branch: draft_make
